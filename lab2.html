@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Елементи інтерфейсу: Система бронювання турів</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            /* Travel Theme Colors */
+            --ocean-blue: #0077b6;
+            --ocean-light: #90e0ef;
+            --sand-color: #f4a261;
+            --sand-light: #fdf6ec;
+            --text-main: #2b2d42;
+            --text-muted: #6c757d;
+            --bg-gradient: linear-gradient(135deg, #caf0f8 0%, #fdf6ec 100%);
+            --card-bg: #ffffff;
+            --danger: #e63946;
+            --success: #2a9d8f;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: var(--bg-gradient);
+            color: var(--text-main);
+            min-height: 100vh;
+            padding-bottom: 50px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 40px;
+            color: var(--ocean-blue);
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.05);
+            padding: 0 20px;
+        }
+
+        .control-section {
+            background: var(--card-bg);
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            padding: 32px;
+            margin: 32px auto;
+            max-width: 950px;
+            border-top: 4px solid var(--ocean-blue);
+            transition: transform 0.3s ease;
+        }
+
+        .control-section:hover {
+            transform: translateY(-2px);
+        }
+
+        h2 {
+            color: var(--ocean-blue);
+            margin-top: 0;
+            margin-bottom: 12px;
+            font-size: 1.6rem;
+            border-bottom: 2px solid var(--ocean-light);
+            padding-bottom: 8px;
+            display: inline-block;
+        }
+
+        .comment {
+            color: var(--text-muted);
+            font-style: italic;
+            margin-bottom: 16px;
+            font-size: 0.95rem;
+            background: #f8f9fa;
+            padding: 10px 15px;
+            border-left: 3px solid var(--sand-color);
+            border-radius: 4px;
+        }
+
+        .examples {
+            display: flex;
+            gap: 24px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+        }
+
+        .example-block {
+            background: #f0f8fb;
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid #d4eaf2;
+            flex: 1 1 250px;
+            min-width: 250px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+        }
+
+        .example-block strong {
+            display: block;
+            margin-bottom: 12px;
+            color: var(--ocean-blue);
+        }
+
+        /* Form Elements */
+        input[type="text"], textarea, select {
+            width: 100%;
+            padding: 10px 12px;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            font-family: inherit;
+            box-sizing: border-box;
+            margin-top: 6px;
+            transition: border-color 0.2s;
+        }
+
+        input[type="text"]:focus, textarea:focus, select:focus {
+            outline: none;
+            border-color: var(--ocean-blue);
+            box-shadow: 0 0 0 3px rgba(0, 119, 182, 0.1);
+        }
+
+        .radio-check-group {
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        input[type="radio"], input[type="checkbox"] {
+            accent-color: var(--ocean-blue);
+            width: 16px;
+            height: 16px;
+        }
+
+        /* Buttons */
+        .btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-family: inherit;
+        }
+        .btn-primary { background: var(--ocean-blue); color: white; }
+        .btn-primary:hover { background: #005f92; }
+        .btn-danger { background: var(--danger); color: white; }
+        .btn-danger:hover { background: #c52835; }
+        .btn-secondary { background: var(--sand-color); color: white; }
+        .btn-secondary:hover { background: #e09252; }
+
+        /* Tabs */
+        .tab-demo {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 0;
+            border-bottom: 2px solid #d4eaf2;
+        }
+        .tab {
+            padding: 10px 20px;
+            background: transparent;
+            cursor: pointer;
+            font-weight: 600;
+            color: var(--text-muted);
+            border-radius: 8px 8px 0 0;
+            transition: all 0.2s;
+            border-bottom: 2px solid transparent;
+            margin-bottom: -2px;
+        }
+        .tab:hover { background: #e8f4f8; }
+        .tab.active {
+            color: var(--ocean-blue);
+            border-bottom: 2px solid var(--ocean-blue);
+            background: transparent;
+        }
+        .tab-content {
+            padding: 20px 10px;
+            color: var(--text-main);
+            min-height: 50px;
+        }
+
+        /* Links */
+        a {
+            color: var(--ocean-blue);
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px dashed var(--ocean-blue);
+            transition: color 0.2s, border-color 0.2s;
+        }
+        a:hover {
+            color: var(--sand-color);
+            border-color: var(--sand-color);
+        }
+
+        /* Tooltips */
+        .tooltip-demo {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            cursor: help;
+            color: var(--ocean-blue);
+            font-weight: 600;
+        }
+        .tooltip-icon {
+            background: var(--ocean-light);
+            color: #004d7a;
+            width: 20px;
+            height: 20px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            margin-left: 6px;
+            font-size: 12px;
+        }
+        .tooltip-text {
+            visibility: hidden;
+            background: #2b2d42;
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 8px 12px;
+            position: absolute;
+            z-index: 10;
+            bottom: 130%;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0;
+            transition: opacity 0.3s, bottom 0.3s;
+            width: max-content;
+            max-width: 200px;
+            font-size: 0.85rem;
+            font-weight: 400;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .tooltip-text::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: #2b2d42 transparent transparent transparent;
+        }
+        .tooltip-demo:hover .tooltip-text {
+            visibility: visible;
+            opacity: 1;
+            bottom: 140%;
+        }
+
+        /* Data Grid / Tables */
+        table.data-grid {
+            border-collapse: collapse;
+            width: 100%;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        table.data-grid th, table.data-grid td {
+            border: 1px solid #e2e8f0;
+            padding: 12px 15px;
+            text-align: left;
+            font-size: 0.9rem;
+        }
+        table.data-grid th {
+            background: var(--ocean-blue);
+            color: white;
+            font-weight: 600;
+        }
+        table.data-grid tr:nth-child(even) {
+            background: #f8fafc;
+        }
+        table.data-grid tr:hover {
+            background: #eef7fa;
+        }
+
+        @media (max-width: 768px) {
+            .control-section { margin: 16px; padding: 20px; }
+            .examples { flex-direction: column; }
+        }
+    </style>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Interactive tabs logic
+            document.querySelectorAll('.example-block').forEach(function(block) {
+                const tabs = block.querySelectorAll('.tab');
+                const content = block.querySelector('.tab-content');
+                
+                if (tabs.length > 0 && content) {
+                    tabs.forEach(function(tab) {
+                        tab.addEventListener('click', function() {
+                            // Remove active class from all tabs in this group
+                            tabs.forEach(t => t.classList.remove('active'));
+                            // Add active class to clicked tab
+                            this.classList.add('active');
+                            // Update content based on data attribute
+                            content.innerHTML = this.getAttribute('data-content');
+                        });
+                    });
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+
+    <h1>Елементи інтерфейсу: Бронювання турів</h1>
+
+    <!-- 1. Radiobutton -->
+    <div class="control-section">
+        <h2>1. Radiobutton (Радіокнопка)</h2>
+        <div class="comment">Радіокнопки дозволяють користувачеві вибрати лише один варіант із взаємовиключного набору.</div>
+        <div class="examples">
+            <div class="example-block">
+                <strong>Тип харчування:</strong>
+                <div class="radio-check-group">
+                    <input type="radio" name="meal" id="breakfast" checked>
+                    <label for="breakfast">Сніданок (BB)</label>
+                </div>
+                <div class="radio-check-group">
+                    <input type="radio" name="meal" id="all-inclusive">
+                    <label for="all-inclusive">Все включено (AI)</label>
+                </div>
+            </div>
+            <div class="example-block">
+                <strong>Транспорт:</strong>
+                <div class="radio-check-group">
+                    <input type="radio" name="transport" id="plane" checked>
+                    <label for="plane">Авіапереліт</label>
+                </div>
+                <div class="radio-check-group">
+                    <input type="radio" name="transport" id="bus">
+                    <label for="bus">Автобус</label>
+                </div>
+            </div>
+            <div class="example-block">
+                <strong>Клас номера:</strong>
+                <div class="radio-check-group">
+                    <input type="radio" name="room" id="economy">
+                    <label for="economy">Економ</label>
+                </div>
+                <div class="radio-check-group">
+                    <input type="radio" name="room" id="standard" checked>
+                    <label for="standard">Стандарт</label>
+                </div>
+                <div class="radio-check-group">
+                    <input type="radio" name="room" id="lux">
+                    <label for="lux">Люкс</label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 2. Checkbox -->
+    <div class="control-section">
+        <h2>2. Checkbox (Прапорець)</h2>
+        <div class="comment">Прапорці дозволяють вибрати один, декілька або жодного варіанта незалежно один від одного.</div>
+        <div class="examples">
+            <div class="example-block">
+                <strong>Додаткові послуги:</strong>
+                <div class="radio-check-group">
+                    <input type="checkbox" id="insurance" checked>
+                    <label for="insurance">Медичне страхування</label>
+                </div>
+                <div class="radio-check-group">
+                    <input type="checkbox" id="transfer">
+                    <label for="transfer">Індивідуальний трансфер</label>
+                </div>
+                <div class="radio-check-group">
+                    <input type="checkbox" id="guide">
+                    <label for="guide">Послуги гіда</label>
+                </div>
+            </div>
+            <div class="example-block">
+                <strong>Зручності в номері:</strong>
+                <div class="radio-check-group">
+                    <input type="checkbox" id="wifi" checked>
+                    <label for="wifi">Безкоштовний Wi-Fi</label>
+                </div>
+                <div class="radio-check-group">
+                    <input type="checkbox" id="balcony">
+                    <label for="balcony">Балкон / Тераса</label>
+                </div>
+            </div>
+            <div class="example-block">
+                <strong>Дієтичні уподобання:</strong>
+                <div class="radio-check-group">
+                    <input type="checkbox" id="vegan">
+                    <label for="vegan">Вегетаріанське меню</label>
+                </div>
+                <div class="radio-check-group">
+                    <input type="checkbox" id="gluten">
+                    <label for="gluten">Безглютенове меню</label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 3. Text input -->
+    <div class="control-section">
+        <h2>3. Text input (Текстове поле)</h2>
+        <div class="comment">Текстові поля призначені для введення коротких текстових даних, таких як імена чи пошукові запити.</div>
+        <div class="examples">
+            <div class="example-block">
+                <label for="fullname"><strong>Повне ім'я (ПІБ):</strong></label>
+                <input type="text" id="fullname" placeholder="Наприклад: Шевченко Тарас Григорович">
+            </div>
+            <div class="example-block">
+                <label for="passport"><strong>Номер закордонного паспорта:</strong></label>
+                <input type="text" id="passport" placeholder="Наприклад: FF123456">
+            </div>
+            <div class="example-block">
+                <label for="search"><strong>Пошук напрямку:</strong></label>
+                <input type="text" id="search" placeholder="Куди ви хочете поїхати?">
+            </div>
+        </div>
+    </div>
+
+    <!-- 4. Tabs -->
+    <div class="control-section">
+        <h2>4. Tabs (Вкладки)</h2>
+        <div class="comment">Вкладки організовують контент у розділені види, полегшуючи навігацію без перезавантаження сторінки.</div>
+        <div class="examples">
+            <div class="example-block">
+                <div class="tab-demo">
+                    <div class="tab active" data-content="<p>Введіть параметри пошуку: дати, кількість людей, напрямок.</p>">Пошук</div>
+                    <div class="tab" data-content="<p>Перевірка паспортних даних та вибір додаткових послуг.</p>">Деталі</div>
+                    <div class="tab" data-content="<p>Введіть дані картки для оплати туру.</p>">Оплата</div>
+                </div>
+                <div class="tab-content"><p>Введіть параметри пошуку: дати, кількість людей, напрямок.</p></div>
+            </div>
+            <div class="example-block">
+                <div class="tab-demo">
+                    <div class="tab active" data-content="<p>Список доступних пакетних турів до Єгипту та Туреччини.</p>">Тури</div>
+                    <div class="tab" data-content="<p>Розклад чартерних та регулярних авіарейсів.</p>">Авіаквитки</div>
+                    <div class="tab" data-content="<p>Бронювання номерів у готелях світу.</p>">Готелі</div>
+                </div>
+                <div class="tab-content"><p>Список доступних пакетних турів до Єгипту та Туреччини.</p></div>
+            </div>
+            <div class="example-block">
+                <div class="tab-demo">
+                    <div class="tab active" data-content="<p>Готель 5*, 1 лінія, власний пляж кораловий риф.</p>">Опис</div>
+                    <div class="tab" data-content="<p>Оцінка 4.8/5. 'Чудовий сервіс та смачна їжа!'</p>">Відгуки</div>
+                </div>
+                <div class="tab-content"><p>Готель 5*, 1 лінія, власний пляж кораловий риф.</p></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 5. Button -->
+    <div class="control-section">
+        <h2>5. Button (Кнопка)</h2>
+        <div class="comment">Кнопки ініціюють дії при натисканні (відправка форми, перехід, підтвердження).</div>
+        <div class="examples">
+            <div class="example-block">
+                <strong>Основна дія:</strong>
+                <button class="btn btn-primary">Забронювати тур</button>
+            </div>
+            <div class="example-block">
+                <strong>Критична дія:</strong>
+                <button class="btn btn-danger">Скасувати бронювання</button>
+            </div>
+            <div class="example-block">
+                <strong>Додаткова дія:</strong>
+                <button class="btn btn-secondary">Застосувати промокод</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 6. Text label -->
+    <div class="control-section">
+        <h2>6. Text label (Текстова мітка)</h2>
+        <div class="comment">Текстові мітки надають контекст, статус виконання або вказують на важливість інформації.</div>
+        <div class="examples">
+            <div class="example-block">
+                <strong>Статус помилки:</strong><br>
+                <span style="color: var(--danger); font-size: 0.9rem;">* Обов'язкове поле для заповнення</span>
+            </div>
+            <div class="example-block">
+                <strong>Статус успіху:</strong><br>
+                <span style="color: var(--success); font-weight: 600; background: #e6f7f5; padding: 6px 12px; border-radius: 4px;">✓ Бронювання підтверджено</span>
+            </div>
+            <div class="example-block">
+                <strong>Інструкція:</strong><br>
+                <span style="color: var(--text-main); font-weight: 500;">Введіть ваші дані латиницею:</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- 7. Link -->
+    <div class="control-section">
+        <h2>7. Link (Посилання)</h2>
+        <div class="comment">Посилання дозволяють користувачам переходити на інші сторінки, документи або зовнішні ресурси.</div>
+        <div class="examples">
+            <div class="example-block">
+                <strong>Договір:</strong><br>
+                <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Умови використання та бронювання</a>
+            </div>
+            <div class="example-block">
+                <strong>Інформація:</strong><br>
+                <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Актуальні візові вимоги 2026</a>
+            </div>
+            <div class="example-block">
+                <strong>Юридична:</strong><br>
+                <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Політика конфіденційності</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- 8. Tooltip -->
+    <div class="control-section">
+        <h2>8. Tooltip (Підказка)</h2>
+        <div class="comment">Підказки відображають додаткову пояснювальну інформацію при наведенні курсору на елемент.</div>
+        <div class="examples">
+            <div class="example-block">
+                <strong>Багаж:</strong><br>
+                <div class="tooltip-demo">
+                    Ручна поклажа
+                    <span class="tooltip-icon">i</span>
+                    <span class="tooltip-text">Допустимі розміри: 55х40х20 см, вага до 7 кг.</span>
+                </div>
+            </div>
+            <div class="example-block">
+                <strong>Страхування:</strong><br>
+                <div class="tooltip-demo">
+                    Медичний поліс
+                    <span class="tooltip-icon">?</span>
+                    <span class="tooltip-text">Покриває лікування до 30 000 євро. Включає COVID-19.</span>
+                </div>
+            </div>
+            <div class="example-block">
+                <strong>Опис:</strong><br>
+                <div class="tooltip-demo">
+                    Екскурсія <span style="text-decoration: underline; margin-left: 4px; font-weight: 400;">Детальніше</span>
+                    <span class="tooltip-text">Тривалість 4 години. Трансфер включено у вартість.</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 9. Dropdown list -->
+    <div class="control-section">
+        <h2>9. Dropdown list (Випадний список)</h2>
+        <div class="comment">Випадні списки дозволяють вибирати один варіант із прихованого розкривного меню, заощаджуючи місце.</div>
+        <div class="examples">
+            <div class="example-block">
+                <label for="guests"><strong>Кількість гостей:</strong></label>
+                <select id="guests">
+                    <option>1 дорослий</option>
+                    <option selected>2 дорослих</option>
+                    <option>2 дорослих + 1 дитина</option>
+                    <option>3 дорослих</option>
+                </select>
+            </div>
+            <div class="example-block">
+                <label for="city"><strong>Місто відправлення:</strong></label>
+                <select id="city">
+                    <option selected>Київ</option>
+                    <option>Львів</option>
+                    <option>Одеса</option>
+                    <option>Варшава</option>
+                </select>
+            </div>
+            <div class="example-block">
+                <label for="stars"><strong>Зірковість готелю:</strong></label>
+                <select id="stars">
+                    <option>Будь-яка</option>
+                    <option>3 зірки</option>
+                    <option>4 зірки</option>
+                    <option selected>5 зірок</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <!-- 10. Data grid -->
+    <div class="control-section">
+        <h2>10. Data grid (Таблиця даних)</h2>
+        <div class="comment">Таблиці даних структурують інформацію по рядках і стовпцях для зручного порівняння та перегляду списків.</div>
+        <div class="examples">
+            <div class="example-block" style="flex: 1 1 100%;">
+                <strong>Доступні тури:</strong>
+                <table class="data-grid">
+                    <tr>
+                        <th>Напрямок</th>
+                        <th>Тривалість</th>
+                        <th>Ціна (на двох)</th>
+                    </tr>
+                    <tr>
+                        <td>Анталія, Туреччина</td>
+                        <td>7 ночей</td>
+                        <td>$ 850</td>
+                    </tr>
+                    <tr>
+                        <td>Шарм-ель-Шейх, Єгипет</td>
+                        <td>10 ночей</td>
+                        <td>$ 1,120</td>
+                    </tr>
+                </table>
+            </div>
+            
+            <div class="example-block" style="flex: 1 1 100%;">
+                <strong>Розклад рейсів (Київ - Варшава):</strong>
+                <table class="data-grid">
+                    <tr>
+                        <th>Рейс</th>
+                        <th>Час вильоту</th>
+                        <th>Статус</th>
+                    </tr>
+                    <tr>
+                        <td>LO 752</td>
+                        <td>14:30</td>
+                        <td><span style="color: var(--success);">За розкладом</span></td>
+                    </tr>
+                    <tr>
+                        <td>PS 101</td>
+                        <td>18:45</td>
+                        <td><span style="color: var(--danger);">Затримується</span></td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="example-block" style="flex: 1 1 100%;">
+                <strong>Порівняння номерів:</strong>
+                <table class="data-grid">
+                    <tr>
+                        <th>Тип номера</th>
+                        <th>Вид</th>
+                        <th>Доплата</th>
+                    </tr>
+                    <tr>
+                        <td>Standard Room</td>
+                        <td>На сад</td>
+                        <td>Включено</td>
+                    </tr>
+                    <tr>
+                        <td>Sea View Room</td>
+                        <td>На море</td>
+                        <td>+ $ 150</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
