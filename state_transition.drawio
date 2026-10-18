@@ -1,0 +1,113 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/26.2.2 Chrome/134.0.6998.178 Electron/35.1.2 Safari/537.36" version="26.2.2">
+  <diagram name="Page-1" id="vy3li_AEWVhYFzeolKuv">
+    <mxGraphModel dx="680" dy="400" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="RAxMUddg8-3aorCBuc1n-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;curved=1;" edge="1" parent="1" source="RAxMUddg8-3aorCBuc1n-1" target="RAxMUddg8-3aorCBuc1n-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="RAxMUddg8-3aorCBuc1n-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;curved=1;" edge="1" parent="1" source="RAxMUddg8-3aorCBuc1n-1" target="RAxMUddg8-3aorCBuc1n-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="RAxMUddg8-3aorCBuc1n-1" value="S1&lt;div&gt;Main page&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="320" y="360" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="RAxMUddg8-3aorCBuc1n-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;curved=1;" edge="1" parent="1" source="RAxMUddg8-3aorCBuc1n-2" target="RAxMUddg8-3aorCBuc1n-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="RAxMUddg8-3aorCBuc1n-2" value="" style="shape=waypoint;sketch=0;fillStyle=solid;size=6;pointerEvents=1;points=[];fillColor=none;resizable=0;rotatable=0;perimeter=centerPerimeter;snapToPoint=1;" vertex="1" parent="1">
+          <mxGeometry x="350" y="310" width="20" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="RAxMUddg8-3aorCBuc1n-4" value="Start" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="335" y="290" width="50" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="RAxMUddg8-3aorCBuc1n-5" value="open app" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="360" y="320" width="70" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="RAxMUddg8-3aorCBuc1n-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0;entryDx=0;entryDy=0;curved=1;" edge="1" parent="1" source="RAxMUddg8-3aorCBuc1n-6" target="RAxMUddg8-3aorCBuc1n-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="RAxMUddg8-3aorCBuc1n-6" value="S2&lt;div&gt;Books list by search&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="220" y="460" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="RAxMUddg8-3aorCBuc1n-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0;entryDx=0;entryDy=0;curved=1;" edge="1" parent="1" source="RAxMUddg8-3aorCBuc1n-7" target="RAxMUddg8-3aorCBuc1n-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="RAxMUddg8-3aorCBuc1n-7" value="S3&lt;div&gt;Books list by category&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="420" y="460" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="RAxMUddg8-3aorCBuc1n-29" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;curved=1;" edge="1" parent="1" source="RAxMUddg8-3aorCBuc1n-8" target="RAxMUddg8-3aorCBuc1n-17">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="RAxMUddg8-3aorCBuc1n-30" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;curved=1;" edge="1" parent="1" source="RAxMUddg8-3aorCBuc1n-8" target="RAxMUddg8-3aorCBuc1n-20">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="RAxMUddg8-3aorCBuc1n-8" value="S4&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;Book page&lt;/span&gt;&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="320" y="560" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="RAxMUddg8-3aorCBuc1n-26" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;curved=1;" edge="1" parent="1" source="RAxMUddg8-3aorCBuc1n-16" target="RAxMUddg8-3aorCBuc1n-23">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="320" y="850" />
+              <mxPoint x="360" y="850" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="RAxMUddg8-3aorCBuc1n-16" value="S7&lt;div&gt;Booking number printed&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="280" y="760" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="RAxMUddg8-3aorCBuc1n-21" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;curved=1;" edge="1" parent="1" source="RAxMUddg8-3aorCBuc1n-17" target="RAxMUddg8-3aorCBuc1n-16">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="288" y="740" />
+              <mxPoint x="320" y="740" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="RAxMUddg8-3aorCBuc1n-28" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;curved=1;" edge="1" parent="1" source="RAxMUddg8-3aorCBuc1n-17" target="RAxMUddg8-3aorCBuc1n-23">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="RAxMUddg8-3aorCBuc1n-17" value="S5&lt;div&gt;Booking successed&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="220" y="660" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="RAxMUddg8-3aorCBuc1n-27" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;curved=1;" edge="1" parent="1" source="RAxMUddg8-3aorCBuc1n-20" target="RAxMUddg8-3aorCBuc1n-23">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="RAxMUddg8-3aorCBuc1n-20" value="S6&lt;div&gt;Book is unavailable&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="420" y="660" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="RAxMUddg8-3aorCBuc1n-23" value="" style="ellipse;html=1;shape=endState;fillColor=strokeColor;" vertex="1" parent="1">
+          <mxGeometry x="350" y="880" width="20" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="RAxMUddg8-3aorCBuc1n-31" value="search by words /&lt;div&gt;show reults&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="190" y="400" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="RAxMUddg8-3aorCBuc1n-32" value="search by criteria /&lt;br&gt;show results" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="410" y="400" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="RAxMUddg8-3aorCBuc1n-34" value="select book /&lt;div&gt;show description&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="385" y="540" width="110" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="RAxMUddg8-3aorCBuc1n-35" value="book [available] /&lt;div&gt;booking number&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="190" y="600" width="110" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="RAxMUddg8-3aorCBuc1n-37" value="book [unavailable] /&lt;div&gt;show message&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="410" y="600" width="130" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="RAxMUddg8-3aorCBuc1n-38" value="close" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="450" y="785" width="50" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="RAxMUddg8-3aorCBuc1n-39" value="select book /&lt;div&gt;show description&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="225" y="540" width="110" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="RAxMUddg8-3aorCBuc1n-40" value="close" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="350" y="830" width="50" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="RAxMUddg8-3aorCBuc1n-41" value="close" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="235" y="850" width="50" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
