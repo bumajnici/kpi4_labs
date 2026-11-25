@@ -1,0 +1,34 @@
+{
+	"id": "6dc193af-5519-4c5e-a251-feb9dcbbf49c",
+	"name": "JSONPlaceholder_Env",
+	"values": [
+		{
+			"key": "baseUrl",
+			"value": "https://jsonplaceholder.typicode.com",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "userId",
+			"value": "",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "createdId",
+			"value": "",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "todoTitle",
+			"value": "",
+			"type": "default",
+			"enabled": true
+		}
+	],
+	"color": null,
+	"_postman_variable_scope": "environment",
+	"_postman_exported_at": "2026-11-25T14:58:01.207Z",
+	"_postman_exported_using": "Postman/12.38.4-261125-0231"
+}
